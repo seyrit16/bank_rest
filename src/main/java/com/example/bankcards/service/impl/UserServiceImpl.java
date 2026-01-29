@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
                 .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .roles(Set.of(Role.ROLE_USER))
+                .role(Role.ROLE_USER)
                 .enabled(true)
                 .build();
 
@@ -71,6 +71,10 @@ public class UserServiceImpl implements UserService {
 
         if (request.getLastName() != null) {
             user.setLastName(request.getLastName());
+        }
+
+        if (request.getRole() != null) {
+            user.setRole(request.getRole());
         }
 
         if (request.getPassword() != null) {

@@ -1,5 +1,6 @@
 package com.example.bankcards.dto;
 
+import com.example.bankcards.entity.invariants.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -20,6 +21,8 @@ public class ChangeUserRequest {
 
     @Email
     private String email;
+
+    private Role role;
 
     @Size(min = 8)
     private String password;

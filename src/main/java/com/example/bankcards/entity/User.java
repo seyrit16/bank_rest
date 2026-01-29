@@ -4,9 +4,6 @@ import com.example.bankcards.entity.invariants.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-import java.util.UUID;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,14 +28,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id")
-    )
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private Set<Role> roles;
+    private Role role;
 
     @Column(nullable = false)
     private boolean enabled = true;
