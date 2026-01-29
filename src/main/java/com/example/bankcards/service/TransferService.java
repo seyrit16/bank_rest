@@ -1,9 +1,10 @@
 package com.example.bankcards.service;
 
+import com.example.bankcards.dto.TransferRequest;
 import com.example.bankcards.entity.Card;
 
 import java.math.BigDecimal;
 
 public interface TransferService {
-    void transferBetweenCards(Card srcCard, Card destCard, BigDecimal amount);
+    void transferBetweenCards(Long userId, TransferRequest request);
 }
