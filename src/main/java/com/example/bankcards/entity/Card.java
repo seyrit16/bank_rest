@@ -27,7 +27,7 @@ public class Card {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id")
-    private User owner;
+    private User user;
 
     @Column(nullable = false)
     private LocalDate expirationDate;

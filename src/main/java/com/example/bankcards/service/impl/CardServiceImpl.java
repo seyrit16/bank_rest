@@ -41,7 +41,7 @@ public class CardServiceImpl implements CardService {
         Card card = Card.builder()
                 .cardNumberEncrypted(encryptedNumber)
                 .lastFourDigits(lastFourNumber)
-                .owner(user)
+                .user(user)
                 .expirationDate(request.getExpirationDate())
                 .status(CardStatus.NOT_ACTIVE)
                 .balance(BigDecimal.ZERO)
