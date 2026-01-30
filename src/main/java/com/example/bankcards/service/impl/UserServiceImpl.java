@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User createUser(CreateUserRequest request) {
+    public User createUser(CreateUserRequest request, Role role) {
 
         if(userRepository.existsByEmail(request.getEmail())){
             throw new UserAlreadyExistsException("User with such an email already exists:"+request.getEmail());
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
                 .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ROLE_USER)
+                .role(role)
                 .enabled(true)
                 .build();
 
@@ -95,5 +95,10 @@ public class UserServiceImpl implements UserService {
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email).orElseThrow(()->new NotFoundException("User with this email not " +
                 "found: " + email));
+    }
+
+    @Override
+    public boolean existsByRole(Role role) {
+        return userRepository.existsByRole(role);
     }
 }
