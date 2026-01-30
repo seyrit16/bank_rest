@@ -1,13 +1,12 @@
 package com.example.bankcards.service.impl;
 
-import com.example.bankcards.dto.CreateCardRequest;
+import com.example.bankcards.dto.request.CreateCardRequest;
 import com.example.bankcards.entity.Card;
 import com.example.bankcards.entity.User;
 import com.example.bankcards.entity.invariants.CardStatus;
 import com.example.bankcards.exception.CardAlredyExistsException;
 import com.example.bankcards.exception.NotFoundException;
 import com.example.bankcards.repository.CardRepository;
-import com.example.bankcards.repository.UserRepository;
 import com.example.bankcards.service.CardService;
 import com.example.bankcards.service.UserService;
 import com.example.bankcards.util.CardEncryptionUtil;

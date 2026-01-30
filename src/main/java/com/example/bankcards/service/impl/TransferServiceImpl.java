@@ -1,6 +1,6 @@
 package com.example.bankcards.service.impl;
 
-import com.example.bankcards.dto.TransferRequest;
+import com.example.bankcards.dto.request.TransferRequest;
 import com.example.bankcards.entity.Card;
 import com.example.bankcards.entity.invariants.CardStatus;
 import com.example.bankcards.exception.CardBlockedException;
@@ -11,9 +11,6 @@ import com.example.bankcards.repository.CardRepository;
 import com.example.bankcards.service.TransferService;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.math.BigDecimal;
 
 @Service
 public class TransferServiceImpl implements TransferService {

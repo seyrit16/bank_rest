@@ -1,7 +1,7 @@
 package com.example.bankcards.controller;
 
-import com.example.bankcards.dto.JwtAuthenticationResponse;
-import com.example.bankcards.dto.SignInRequest;
+import com.example.bankcards.dto.response.JwtAuthenticationResponse;
+import com.example.bankcards.dto.request.SignInRequest;
 import com.example.bankcards.security.components.CookieService;
 import com.example.bankcards.service.AuthenticationService;
 import jakarta.servlet.http.HttpServletResponse;

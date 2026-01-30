@@ -1,8 +1,7 @@
-package com.example.bankcards.dto;
+package com.example.bankcards.dto.request;
 
-import com.example.bankcards.entity.invariants.Role;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
@@ -11,18 +10,16 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ChangeUserRequest {
-    @NotNull
-    private Long id;
-
+public class CreateUserRequest {
+    @NotBlank
     private String firstName;
 
+    @NotBlank
     private String lastName;
 
     @Email
+    @NotBlank
     private String email;
-
-    private Role role;
 
     @Size(min = 8)
     private String password;
