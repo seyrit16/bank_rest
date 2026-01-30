@@ -1,21 +1,20 @@
 package com.example.bankcards.service.impl;
 
-import com.example.bankcards.dto.ChangeUserRequest;
-import com.example.bankcards.dto.CreateUserRequest;
+import com.example.bankcards.dto.request.ChangeUserRequest;
+import com.example.bankcards.dto.request.CreateUserRequest;
 import com.example.bankcards.entity.User;
 import com.example.bankcards.entity.invariants.Role;
 import com.example.bankcards.exception.NotFoundException;
 import com.example.bankcards.exception.UserAlreadyExistsException;
 import com.example.bankcards.repository.UserRepository;
 import com.example.bankcards.service.UserService;
-import jdk.jshell.spi.ExecutionControl;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -100,5 +99,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean existsByRole(Role role) {
         return userRepository.existsByRole(role);
+    }
+
+    @Override
+    public List<User> getAllUsers(Pageable pageable) {
+        return userRepository.findAll(pageable).getContent();
     }
 }

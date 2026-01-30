@@ -1,6 +1,6 @@
 package com.example.bankcards.config.init;
 
-import com.example.bankcards.dto.CreateUserRequest;
+import com.example.bankcards.dto.request.CreateUserRequest;
 import com.example.bankcards.entity.invariants.Role;
 import com.example.bankcards.service.UserService;
 import org.springframework.boot.CommandLineRunner;

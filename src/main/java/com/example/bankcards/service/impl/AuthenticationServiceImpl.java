@@ -1,11 +1,10 @@
 package com.example.bankcards.service.impl;
 
-import com.example.bankcards.dto.JwtAuthenticationResponse;
-import com.example.bankcards.dto.SignInRequest;
+import com.example.bankcards.dto.response.JwtAuthenticationResponse;
+import com.example.bankcards.dto.request.SignInRequest;
 import com.example.bankcards.security.components.BankUserDetailsService;
 import com.example.bankcards.security.components.JwtService;
 import com.example.bankcards.service.AuthenticationService;
-import com.example.bankcards.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

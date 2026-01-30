@@ -1,6 +1,6 @@
 package com.example.bankcards.service;
 
-import com.example.bankcards.dto.CreateCardRequest;
+import com.example.bankcards.dto.request.CreateCardRequest;
 import com.example.bankcards.entity.Card;
 
 import java.util.List;
